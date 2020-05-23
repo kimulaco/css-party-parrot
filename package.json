@@ -1,0 +1,19 @@
+{
+  "name": "css-party-parrot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "kimulaco",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "serve docs -p 3000",
+    "build": "npm run build:script && npm run build:sass",
+    "build:script": "node script/index",
+    "build:sass": "sass sass/main.scss docs/css/main.css --no-source-map"
+  },
+  "devDependencies": {
+    "get-pixels": "^3.3.2",
+    "sass": "^1.26.5",
+    "serve": "^11.3.1"
+  }
+}

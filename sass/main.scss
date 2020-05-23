@@ -1,0 +1,42 @@
+@import "./frames/box-shadow-1";
+@import "./frames/box-shadow-2";
+@import "./frames/box-shadow-3";
+@import "./frames/box-shadow-4";
+@import "./frames/box-shadow-5";
+@import "./frames/box-shadow-6";
+@import "./frames/box-shadow-7";
+@import "./frames/box-shadow-8";
+@import "./frames/box-shadow-9";
+@import "./frames/box-shadow-10";
+
+@keyframes party {
+  0% { box-shadow: $box-shadow-1; }
+  9% { box-shadow: $box-shadow-1; }
+  10% { box-shadow: $box-shadow-2; }
+  19% { box-shadow: $box-shadow-2; }
+  20% { box-shadow: $box-shadow-3; }
+  29% { box-shadow: $box-shadow-3; }
+  30% { box-shadow: $box-shadow-4; }
+  39% { box-shadow: $box-shadow-4; }
+  40% { box-shadow: $box-shadow-5; }
+  49% { box-shadow: $box-shadow-5; }
+  50% { box-shadow: $box-shadow-6; }
+  59% { box-shadow: $box-shadow-6; }
+  60% { box-shadow: $box-shadow-7; }
+  69% { box-shadow: $box-shadow-7; }
+  70% { box-shadow: $box-shadow-8; }
+  79% { box-shadow: $box-shadow-8; }
+  80% { box-shadow: $box-shadow-9; }
+  89% { box-shadow: $box-shadow-9; }
+  90% { box-shadow: $box-shadow-10; }
+  100% { box-shadow: $box-shadow-10; }
+}
+
+.party-parrot {
+  width: 1px;
+  height: 1px;
+  margin: 0 34px 24px 0;
+  background: transparent;
+  box-shadow: $box-shadow-1;
+  animation: party 0.5s linear 0s infinite;
+}
