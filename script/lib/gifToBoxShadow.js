@@ -8,27 +8,27 @@ const getPixels = require('get-pixels')
  * @return {object[]}
  */
 const uint8ArrayToRgba = ({ data, width, height }) => {
-    const colorLength = data.length / 4
-    const colorList = []
+  const colorLength = data.length / 4
+  const colorList = []
 
-    for (let i = 0; i < colorLength; i++) {
-        const rowIndex = Math.ceil((i + 1) / width) - 1
+  for (let i = 0; i < colorLength; i++) {
+    const rowIndex = Math.ceil((i + 1) / width) - 1
 
-        if (!colorList[rowIndex]) {
-            colorList[rowIndex] = []
-        }
-
-        const dataIndex = i * 4
-
-        colorList[rowIndex].push({
-            r: data[dataIndex],
-            g: data[dataIndex + 1],
-            b: data[dataIndex + 2],
-            a: data[dataIndex + 3] / 255
-        })
+    if (!colorList[rowIndex]) {
+      colorList[rowIndex] = []
     }
 
-    return colorList
+    const dataIndex = i * 4
+
+    colorList[rowIndex].push({
+      r: data[dataIndex],
+      g: data[dataIndex + 1],
+      b: data[dataIndex + 2],
+      a: data[dataIndex + 3] / 255
+    })
+  }
+
+  return colorList
 }
 
 /**
@@ -63,14 +63,14 @@ const pixelToBoxShadow = (data) => {
   let boxShadow = ''
 
   data.forEach((row, rowIndex) => {
-      row.forEach((cell, cellIndex) => {
-          if (cell.a <= 0) {
-              return
-          }
-          const position = `${cellIndex}px ${rowIndex}px`
-          const color = `rgba(${cell.r},${cell.g},${cell.b},${cell.a}),`
-          boxShadow += `${position} ${color}`
-      })
+    row.forEach((cell, cellIndex) => {
+      if (cell.a <= 0) {
+        return
+      }
+      const position = `${cellIndex}px ${rowIndex}px`
+      const color = `rgba(${cell.r},${cell.g},${cell.b},${cell.a}),`
+      boxShadow += `${position} ${color}`
+    })
   })
 
   return boxShadow.replace(/\,$/, '')

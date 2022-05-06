@@ -38,5 +38,7 @@
   margin: 0 34px 24px 0;
   background: transparent;
   box-shadow: $box-shadow-1;
+  will-change: box-shadow;
+  transform: translateZ(0);
   animation: party 0.5s linear 0s infinite;
 }
